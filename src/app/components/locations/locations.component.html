@@ -1,1 +1,17 @@
-<p>locations works!</p>
+<h2>Locations History</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>ID</th>
+    <th>Date Debut</th>
+    <th>Date Fin</th>
+    <th>Prix Total</th>
+  </tr>
+
+  <tr *ngFor="let l of locations">
+    <td>{{l.id}}</td>
+    <td>{{l.dateDebut}}</td>
+    <td>{{l.dateFin}}</td>
+    <td>{{l.prixTotal}}</td>
+  </tr>
+</table>

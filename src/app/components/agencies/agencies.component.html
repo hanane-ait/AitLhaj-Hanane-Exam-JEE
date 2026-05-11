@@ -1,1 +1,15 @@
-<p>agencies works!</p>
+<h2>Agencies</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Ville</th>
+  </tr>
+
+  <tr *ngFor="let a of agencies">
+    <td>{{a.id}}</td>
+    <td>{{a.nom}}</td>
+    <td>{{a.ville}}</td>
+  </tr>
+</table>

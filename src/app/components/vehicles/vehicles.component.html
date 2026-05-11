@@ -1,1 +1,23 @@
-<p>vehicles works!</p>
+<h2>Vehicles List</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>ID</th>
+    <th>Marque</th>
+    <th>Modele</th>
+    <th>Matricule</th>
+    <th>Prix/Jour</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let v of vehicles">
+    <td>{{v.id}}</td>
+    <td>{{v.marque}}</td>
+    <td>{{v.modele}}</td>
+    <td>{{v.matricule}}</td>
+    <td>{{v.prixParJour}}</td>
+    <td>
+      <button (click)="delete(v.id)">Delete</button>
+    </td>
+  </tr>
+</table>

@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LocationService } from '../../services/location.service';
 
 @Component({
   selector: 'app-locations',
   standalone: true,
-  imports: [],
-  templateUrl: './locations.component.html',
-  styleUrl: './locations.component.css'
+  imports: [CommonModule],
+  templateUrl: './locations.component.html'
 })
-export class LocationsComponent {
+export class LocationsComponent implements OnInit {
 
+  locations: any;
+
+  constructor(private service: LocationService) {}
+
+  ngOnInit(): void {
+    this.load();
+  }
+
+  load() {
+    this.service.getAll().subscribe(data => {
+      this.locations = data;
+    });
+  }
 }
